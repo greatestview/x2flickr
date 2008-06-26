@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE x2 SYSTEM "x2request.dtd">
+<x2>
+	<source>
+		<photo id="15354646812">
+			<image url="http://www.bla.de" type="square" />
+			<image url="http://www.bla.de" type="medium" />
+		</photo>
+		<data>
+			<owner id="12037949754@N01" username="Bees" realname="Cal Henderson" location="Bedford, UK" />
+			<title>Titel</title>
+			<description>Blablablbalblal</description>
+			<tags>
+				<tag>Bielefeld</tag>
+				<tag>Borkum</tag>
+			</tags>
+		</data>
+	</source>
+	<thumbset cols="30" rows="40">
+		<thumb id="135232466" url="http://www.bla.de" />
+	</thumbset>
+</x2>
