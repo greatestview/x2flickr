@@ -1,0 +1,12 @@
+
+
+DBManager
+--------------
+
+void 			InsertImage(Int ID, Int AverageColor, String User, Array<String> Tags)
+boolean 		IDExists(Int ID)
+Array<Picture> 	getAverageByUser(String UserID, Int AverageColor, Int limit)
+
+Array<Int>		getQueue(Int limit)
+void			removeIdFromQueue(Int ID)
+void			addToQueue(Array<Int> IDs)
