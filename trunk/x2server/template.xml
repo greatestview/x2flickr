@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x2>
+	<source>
+		<image id="">
+			<thumbnail url="" />
+			<medium url="" />
+			<original url="" />			
+		</image>
+		<data>
+			<tags>
+				<tag />
+			</tags>
+		</data>
+	</source>
+	<thumbset cols="" rows="">
+		<thumb id="" url=""/>
+	</thumbset>
+</x2>
