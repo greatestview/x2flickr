@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT x2 (source, thumbset?)>
+	<!ELEMENT source (photo, data?)>
+		<!ELEMENT photo (image+)>
+		<!ATTLIST photo
+			id CDATA #REQUIRED
+		>
+			<!ELEMENT image EMPTY>
+			<!ATTLIST image
+				url CDATA #REQUIRED
+				type (square | thumbnail | small | medium | original) #IMPLIED
+			>
+		<!ELEMENT data (owner, title?, description?, tags?)>
+			<!ELEMENT owner EMPTY>
+			<!ATTLIST owner
+				id CDATA #REQUIRED
+				username CDATA #IMPLIED
+				realname CDATA #IMPLIED
+				location CDATA #IMPLIED
+			>
+			<!ELEMENT title (#PCDATA)>
+			<!ELEMENT description (#PCDATA)>
+			<!ELEMENT tags (tag+)>
+				<!ELEMENT tag (#PCDATA)>
+	<!ELEMENT thumbset (thumb+)>
+	<!ATTLIST thumbset
+		cols CDATA #REQUIRED
+		rows CDATA #REQUIRED
+	>
+		<!ELEMENT thumb EMPTY>
+		<!ATTLIST thumb
+			id CDATA #REQUIRED
+			url CDATA #REQUIRED
+		>

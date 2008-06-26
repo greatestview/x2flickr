@@ -1,0 +1,34 @@
+
+x2request.php?search=bielefeld&in=tags&sort=relevant&maxwidth=30&maxheight=30
+
+search				Suchstring (opt), Standardwert: "" entspricht Random
+in	 > tags
+	 > people
+
+sort				definiert Ausgabepriorität
+	 Tagsuche:
+	 > relevant		(Standardwert)
+	 > recent
+	 > interesting
+	 
+	 Gruppensuche:
+	 > relevant		(Standardwert)
+	 > recent		Recent activity
+	 > size			Group size
+	 > date			Date created
+	 
+	 Peoplesuche:
+	 > name			Screen name (Standardwert)
+	 > date			Member since
+	 > size			# of items
+
+maxwidth			Maximale Anzahl an Thumbnails in der Breite
+maxheight			Maximale Anzahl an Thumbnails in der Höhe
+
+
+<!--
+	x2request.php?searchstring=suchstring&searchuser=true&searchid=false&searchtags=true
+	searchuser		Suchstring auf User anwenden (opt), Standardwert: true
+	searchid		Suchstring auf ID anwenden (opt), Standardwert: true
+	searchtags		Suchstring auf Tags anwenden (opt), Standardwert: true
+-->
