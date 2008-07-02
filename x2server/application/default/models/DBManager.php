@@ -27,14 +27,15 @@ class DBManager {
 		mysql_close($this->link);
 	}
 	
-	function getImage($UserID, $Tag, $AverageColor){
-		$query = 'SELECT x2_photos.ID, x2_tags.Name, x2_photos.AverageColor
+	function getImage($UserID, $Tag, $AverageColor, $Limit){
+		$query = "SELECT x2_photos.ID, x2_tags.Name, x2_photos.AverageColor
 		FROM x2_photos, x2_mapping, x2_tags
 		WHERE x2_photos.ID = x2_mapping.PhotoID
 		AND x2_mapping.TagID = x2_tags.ID
-		AND x2_tags.Name = $Tag 
-		AND x2_photos.AverageColor = $AverageColor
-		AND x2_photos.UserID = $UserID';
+		AND x2_tags.Name =".$Tag." 
+		AND x2_photos.AverageColor =".$AverageColor."
+		AND x2_photos.UserID =".$UserID."
+		LIMIT BY ".$Limit;
 		$result = mysql_query($query) 
 			or die("Fehler in DBManager: Anfrage fehlgeschlagen: " . mysql_error());
 		$row = mysql_fetch_object($result);	
@@ -42,11 +43,13 @@ class DBManager {
 	}
 	
 	function addImage($ID, $AverageColor, $UserID, $Tags){
-		 $query = "INSERT INTO x2_photos (ID, AverageColor, UserID) 
+		// Adding the Image
+		$query = "INSERT INTO x2_photos (ID, AverageColor, UserID) 
 		 		  VALUES ('$ID', '$AverageColor', '$UserID')";
-		 $result = mysql_query($query) 
-		 	or die('Fehler in DBManager->addImage: Kann Bild mit ID $ID nicht eintragen.');
-		 
+		$result = mysql_query($query) 
+			or die('Fehler in DBManager->addImage: Kann Bild mit ID $ID nicht eintragen.');
+		// Adding the Tags
+		// TODO check if Tag already exists 
 	}
 	
 	// TODO fix!
@@ -114,6 +117,3 @@ class DBManager {
 }
 
 $dbmanager = new DBManager();
-//$dbmanager->queuePush(array(rand(1,100),rand(1,100)));
-//$dbmanager->addImage("1","1","1");
-//echo $dbmanager->getTagID("Ort");
